@@ -88,6 +88,9 @@ ENV/
 # Rope project settings
 .ropeproject
 
+#carptea disño saas
+desing/*
+
 # Secrect json
 
 swn/secrets.json

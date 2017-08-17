@@ -53,10 +53,6 @@ class Subscription(TimeStampedModel):
     email = models.EmailField('email')
 
 
-
-
-
-
 class Commentary(TimeStampedModel):
     """django data model comentario"""
 
