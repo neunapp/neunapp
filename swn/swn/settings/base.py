@@ -26,11 +26,17 @@ DJANGO_APPS = (
 )
 
 LOCAL_APPS = (
-
+    'applications.home',
+    'applications.blog',
+    'applications.clientes',
+    'applications.productos',
+    'applications.cotizacion',
 )
 
 THIRD_PARTY_APPS = (
-
+    'ckeditor',
+    'sorl.thumbnail',
+    'ckeditor_uploader',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
