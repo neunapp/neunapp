@@ -131,6 +131,7 @@ class Commentary(TimeStampedModel):
     email = models.EmailField('email')
     nick = models.CharField('apodo', max_length=30)
 
+
     class Meta:
         verbose_name = 'Comentario'
         verbose_name_plural = 'comentarios'
