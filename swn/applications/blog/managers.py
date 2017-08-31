@@ -14,9 +14,17 @@ class BlogManager(models.Manager):
         ).order_by('-views')[:20]
 
 
+    def search_blog_by_category(self, slug):
+        #filtramos por nombre blog
+        return self.filter(
+            published=True,
+            category__slug = slug,
+        ).order_by('-views')[:20]
+
 
 class CategoryManager(models.Manager):
     """procedimiento para tabla category"""
 
     def list_category(self):
         return self.order_by('-name')
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  method="get">{% csrf_token %}
+      {{form.kword}}
+    <button type="submit">Buscar</button>
+</form>
+<h1>lista de resultados</h1>
+
+{% for b in blogs  %}
+    <p>
+        {{ b.image }}
+    </p>
+    <p>
+        {{ b.title }}
+    </p>
+    <p>
+        {{ b.description }}
+    </p>
+    -----------------------------------------------
+{% endfor %}
+</body>
+</html>

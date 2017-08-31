@@ -15,7 +15,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.template.defaultfilters import slugify
 
 #managers
-from .managers import BlogManager
+from .managers import BlogManager, CategoryManager
 
 
 
@@ -38,6 +38,8 @@ class Category(TimeStampedModel):
     """django data model categoria"""
 
     name = models.CharField('nombre', max_length=30)
+    slug = models.SlugField(editable=False, max_length=200)
+    objects = CategoryManager()
 
     class Meta:
         verbose_name = 'Categoria'
@@ -46,6 +48,12 @@ class Category(TimeStampedModel):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        str = self.name
+        slug_unique = str.replace(" ", "-")
+        self.slug = slugify(slug_unique)
+        super(Category, self).save(*args, **kwargs)
 
 
 @python_2_unicode_compatible

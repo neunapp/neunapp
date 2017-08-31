@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="IpnbSettings">
+    <option name="workingDirectory" value="C:\Users\Gaell\Desktop\Django Project\neunapp\swn" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7.13 virtualenv at C:\Users\Gaell\Desktop\Entornos\neunapp" project-jdk-type="Python SDK" />
 </project>
