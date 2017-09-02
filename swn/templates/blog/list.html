@@ -15,7 +15,7 @@
 
 <h1>lista de resultados</h1>
 {% for c in categorias  %}
-    <a href="http://127.0.0.1:8000/blog/{{ c.slug }}">
+    <a href="#">
         {{ c.name }}
     </a>
     -----------------------------------------------
@@ -24,12 +24,9 @@
     <p>
         {{ b.image }}
     </p>
-    <p>
+    <a href="{% url 'blog_app:blog-detail' b.category.slug b.slug %}">
         {{ b.title }}
-    </p>
-    <p>
-        {{ b.description }}
-    </p>
+    </a>
     -----------------------------------------------
 {% endfor %}
 
