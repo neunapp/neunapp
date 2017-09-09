@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
 
 from django.views.generic import (
     CreateView,
@@ -100,7 +100,7 @@ class BlogCreatedComentaryView(FormMixin, DetailView):
         #obtenemos'
 
         blog = self.object
-        context['blog'] = Blog.objects.filter(pk=blog.pk)
+        context['commentary'] = Commentary.objects.filter(blog=blog).order_by('-created')
         return context
 
     def post(self, request, *args, **kwargs):
