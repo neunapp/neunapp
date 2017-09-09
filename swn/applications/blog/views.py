@@ -111,6 +111,7 @@ class BlogCreatedComentaryView(FormMixin, DetailView):
         else:
             return self.form_invalid(form)
 
+
     def form_valid(self, form):
 
         email = form.cleaned_data['email']
