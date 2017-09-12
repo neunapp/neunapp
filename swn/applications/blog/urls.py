@@ -12,4 +12,11 @@ urlpatterns = [
         views.BlogListView.as_view(),
         name='blog-list'
     ),
+
+    url(
+        r'^blog/(?P<category>[-\w]+)/(?P<slug>[-\w]+)/$',
+        views.BlogCreatedComentaryView.as_view(),
+        name='blog-detail'
+    ),
+
 ]

@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.core.urlresolvers import reverse_lazy, reverse
 
 from django.views.generic import (
     CreateView,
@@ -12,14 +13,19 @@ from django.views.generic import (
     FormView,
     ListView
 )
+
+from django.views.generic.edit import FormMixin
 # Create your views here.
 
 #app blog
-from .models import Blog, Category
-from .forms import SearchForm
+from .models import Blog, Category, Commentary
+#local forms
+from .forms import SearchForm,ComentarybyBlogForm
+
 
 
 class BlogListView(ListView):
+
    context_object_name = 'blogs'
    template_name = 'blog/list.html'
 
@@ -39,7 +45,9 @@ class BlogListView(ListView):
 
 
 class BlogCategoriaListView(ListView):
-   """vista que lista caterias por blog"""
+   """
+   vista que lista caterias por blog
+   """
 
    context_object_name = 'categories'
    template_name = 'blog/by_category.html'
@@ -59,3 +67,69 @@ class BlogCategoriaListView(ListView):
        #queryset_category = Category.objects.list_category()
        return queryset
       # return {'blogs':queryset,'categories':queryset_category}
+
+
+
+class BLogDetailview(DetailView):
+    """
+    vista que muestra detalle blog 
+    """
+
+    context_object_name = 'blogs'
+    model = Blog
+    template_name = 'blog/detail.html'
+
+
+
+class BlogCreatedComentaryView(FormMixin, DetailView):
+    """
+    vista que su agrega un comentario blog
+    """
+
+    model = Blog
+    template_name = 'blog/detail.html'
+    form_class = ComentarybyBlogForm
+
+    def get_success_url(self):
+        return reverse_lazy('/')
+
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogCreatedComentaryView, self).get_context_data(**kwargs)
+        context['form']= self.get_form()
+        #obtenemos'
+
+        blog = self.object
+        context['commentary'] = Commentary.objects.filter(blog=blog).order_by('-created')
+        return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+
+    def form_valid(self, form):
+
+        email = form.cleaned_data['email']
+
+        nick = form.cleaned_data['nick']
+
+        description = form.cleaned_data['description']
+
+        blog = self.object
+
+        comentario = Commentary(
+            email = email,
+            nick = nick,
+            description = description,
+            blog = blog
+        )
+        comentario.save()
+        return super(BlogCreatedComentaryView, self).form_valid(form)
+
+
+

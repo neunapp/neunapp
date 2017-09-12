@@ -17,6 +17,7 @@ class BlogAdmin(admin.ModelAdmin):
    )
    search_fields = ('title', 'description')
    list_filter = ('category',)
+   #campos para agregar
    fields =(
         'title',
         'description',
@@ -29,6 +30,7 @@ class BlogAdmin(admin.ModelAdmin):
         'created_by',
         'modified_by',
    )
+   #solo si hay many to many
    filter_horizontal = ('tag',)
 
 

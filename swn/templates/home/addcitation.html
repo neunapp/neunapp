@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Citacion</title>
+</head>
+<body>
+<form action="#" method="POST">
+    {% csrf_token %}
+    <label for="">Correo</label>
+    {{form.email}} <br>
+    <label for="">Telefono</label>
+{{form.phone}} <br>
+    <label for="">Direccion</label>
+{{form.address}} <br>
+    <label for="">Nombre</label>
+{{form.name}}<br>
+    <label for="">hora de atencion</label>
+{{form.hour_atention}}<br>
+    <label for="">Dia de atencion</label>
+{{form.day_atention}}<br>
+
+    <input type="submit" value="Send request">
+</form>
+
+</body>
+</html>
