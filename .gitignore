@@ -92,6 +92,10 @@ ENV/
 
 desing/bower_components/*
 desing/node_modules/*
+desing/scss/_app.scss
+desing/scss/_config.scss
+desing/scss/_settings.scss
+desing/scss/styles.scss
 
 # Secrect json
 
