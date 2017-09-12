@@ -89,7 +89,9 @@ ENV/
 .ropeproject
 
 #carptea disño saas
-desing/*
+
+desing/bower_components/*
+desing/node_modules/*
 
 # Secrect json
 
@@ -107,8 +109,3 @@ swn/applications/clientes/migrations/*
 swn/applications/cotizacion/migrations/*
 swn/applications/home/migrations/*
 swn/applications/productos/migrations/*
-
-
-//-- node--//
-nliga/node_modules/
-nliga/node_modules/*

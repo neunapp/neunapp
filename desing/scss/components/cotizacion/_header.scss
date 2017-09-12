@@ -1,0 +1,36 @@
+.cotizacion-header{
+  padding-top: 1em;
+  text-align: center;
+  &__title{
+    font-family: $font-title;
+    font-size: 2.5em;
+    color: color(primero);
+    font-weight: bold;
+    @include hasta(640px){
+      font-size: 1.8em;
+    };
+  }
+  &__amount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-text;
+    &__title{
+      color: color(tercero);
+      margin-right: 0.3em;
+    }
+    &__total{
+      border: 1px solid;
+      padding: {
+        top: 0.3em;
+        bottom: 0.3em;
+        left: 1em;
+        right: 1em;
+      };
+      border-color: color(primero);
+      font-size: 1.5em;
+      color: color(segundo);
+      font-weight: bold;
+    }
+  }
+}

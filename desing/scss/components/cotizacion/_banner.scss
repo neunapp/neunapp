@@ -1,0 +1,78 @@
+.banner-cotizacion {
+  position: relative;
+  text-align: center;
+  height: 300px;
+  color: color(blanco);
+  &__experts{
+    background-color:rgba(0,0,0,0.6);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.banner-cotizacion__fondo{
+  height: 300px;
+  width: 100%;
+}
+
+.banner-cotizacion__experts__info{
+  width: 20%;
+  font-family: $font-title;
+  margin: 1em;
+  border: 2px solid;
+  border-color: color(segundo);
+  padding: 0.5em;
+  border-radius: 10px;
+  @include hasta(1024px){
+    display: none;
+  };
+  &__title{
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  &__text{
+    font-size: 0.8em;
+    color: #e0e0e0;
+  }
+}
+
+.banner-cotizacion__experts__item{
+  margin: 1em;
+  font-size: 1em;
+  width: 20%;
+  &__img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    @include hasta(640px){
+      width: 60px;
+      height: 60px;
+    };
+  }
+  &__title{
+    font-size: 1em;
+    font-weight: bold;
+    font-family: $font-title;
+    height: 20px;
+    margin-bottom: 1em;
+    @include hasta(640px){
+      font-size: 0.8em;
+      margin-bottom: 2em;
+    };
+  }
+  &__email{
+    font-size: 0.8em;
+    text-decoration: underline;
+    color: #e0e0e0;
+    @include hasta(640px){
+      font-size: 0.6em;
+      margin-bottom: 2em;
+    };
+  }
+}

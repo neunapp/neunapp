@@ -1,0 +1,34 @@
+.services {
+  background: #eeeeee;
+  padding: {
+    top: 3em;
+    bottom: 3em;
+    left: 1em;
+    right: 1em;
+  };
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: color(tercero);
+  &__item{
+    padding: 1em;
+    font-size: 0.9em;
+    &__title{
+      font-weight: bold;
+      margin-bottom: 0px;
+      font-family: $font-title;
+    }
+    &__description{
+      color: #757575;
+    }
+  }
+}
+
+.services__icon{
+  background: color(primero);
+  color: color(blanco);
+  padding: 0.3em;
+  border-radius: 50%;
+  margin-bottom: 0.3em;
+}

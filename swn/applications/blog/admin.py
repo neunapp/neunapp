@@ -34,8 +34,6 @@ class BlogAdmin(admin.ModelAdmin):
 
 admin.site.register(Blog, BlogAdmin )
 
-
-
 admin.site.register(Category)
 admin.site.register(Subscription)
 admin.site.register(Tag)
