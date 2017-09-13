@@ -21,19 +21,4 @@ class Suscription(TimeStampedModel):
 
 
 
-class Citation(TimeStampedModel):
 
-    email = models.EmailField('email')
-    phone = models.CharField('Celular', max_length=12)
-    address = models.CharField('Direccion', max_length=30)
-    name = models.CharField('nombre', max_length=40)
-    hour_atention = models.CharField('hora de atencion', max_length= 15)
-    day_atention = models.CharField('dia de atencion', max_length= 15)
-
-    class Meta:
-        verbose_name = 'citacion'
-        verbose_name_plural = 'citaciones'
-        ordering = ['-created']
-
-    def __str__(self):
-        return self.name
