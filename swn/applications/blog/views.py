@@ -23,7 +23,35 @@ from .models import Blog, Category, Commentary
 from .forms import SearchForm,ComentarybyBlogForm
 
 
+#vistas para blog
+class BlogView(ListView):
+    """ pantalla principal de blog"""
 
+    context_object_name = 'blogs'
+    template_name = 'blog/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogView, self).get_context_data(**kwargs)
+        context['form'] = SearchForm
+        return context
+
+    def get_queryset(self):
+        #recuperamos el valor por GET
+        q = self.request.GET.get("kword", '')
+        queryset = Blog.objects.search_blog(q)
+        return queryset
+
+
+class BLogDetailview(DetailView):
+    """
+    vista que muestra detalle blog
+    """
+
+    model = Blog
+    template_name = 'blog/detail.html'
+
+
+###
 class BlogListView(ListView):
 
    context_object_name = 'blogs'
@@ -67,18 +95,6 @@ class BlogCategoriaListView(ListView):
        #queryset_category = Category.objects.list_category()
        return queryset
       # return {'blogs':queryset,'categories':queryset_category}
-
-
-
-class BLogDetailview(DetailView):
-    """
-    vista que muestra detalle blog 
-    """
-
-    context_object_name = 'blogs'
-    model = Blog
-    template_name = 'blog/detail.html'
-
 
 
 class BlogCreatedComentaryView(FormMixin, DetailView):
@@ -130,6 +146,3 @@ class BlogCreatedComentaryView(FormMixin, DetailView):
         )
         comentario.save()
         return super(BlogCreatedComentaryView, self).form_valid(form)
-
-
-

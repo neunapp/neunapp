@@ -13,7 +13,8 @@ class SearchForm(forms.Form):
        required=False,
        widget=forms.TextInput(
            attrs={
-               'placeholder': 'Buscar'
+                'class':'blog-form__input',
+                'placeholder': 'Buscar'
            }
        )
    )
@@ -21,7 +22,7 @@ class SearchForm(forms.Form):
 
 
 class ComentarybyBlogForm(forms.ModelForm):
-    """ 
+    """
     formulario para agregar comentarios a los temas del blog
     """
 

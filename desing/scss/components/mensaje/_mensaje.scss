@@ -1,0 +1,19 @@
+.mensaje {
+  padding: 5%;
+  &__content{
+    display: flex;
+    align-items: center;
+    &__card{
+      padding: 2em;
+      font-family: $font-title;
+      color: color(tercero);
+      &__title{
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+      &__link{
+        color: color(primero);
+      }
+    }
+  }
+}

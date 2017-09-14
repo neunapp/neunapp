@@ -21,7 +21,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #urls para aplicacion blog
-    url(r'^', include('applications.blog.urls', namespace="blog_app")),
     url(r'^', include('applications.home.urls', namespace='home_app')),
+    url(r'^', include('applications.cotizacion.urls', namespace='cotizacion_app')),
+    url(r'^', include('applications.productos.urls', namespace='productos_app')),
+    url(r'^', include('applications.blog.urls', namespace="blog_app")),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,10 +1,31 @@
 
 from django import forms
 
-from .models import Citation
+from .models import Citation, Suscription
+
+
+class SuscriptionForm(forms.ModelForm):
+    """
+    formulario para agregar citaciones
+    """
+
+    class Meta:
+        model = Suscription
+        fields = (
+            'email',
+        )
+        widgets = {
+            'email': forms.TextInput(
+                attrs={
+                    'class':'suscription__form__input',
+                    'placeholder': 'Correo Electronico',
+                }
+            ),
+        }
+
 
 class CitationForm(forms.ModelForm):
-    """ 
+    """
     formulario para agregar citaciones
     """
 
@@ -50,9 +71,3 @@ class CitationForm(forms.ModelForm):
                 }
             ),
         }
-
-
-
-
-
-

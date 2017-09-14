@@ -1,0 +1,40 @@
+.cita__form {
+  font-family: $font-title;
+  &__title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.5em;
+    color: color(tercero);
+    margin-bottom: 1em;
+    &__icon{
+      color: color(primero);
+      margin-right: 0.5em;
+    }
+    &__text{
+      margin: 0px;
+    }
+  }
+}
+
+.cita__forms__btns{
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  &__btn {
+    color: color(blanco);
+    background: color(primero);
+    border-radius: 20px;
+    padding: {
+      top: 1em;
+      bottom: 1em;
+      left: 3em;
+      right: 3em;
+    }
+    &:hover{
+      cursor: pointer;
+      background: color(segundo);
+    }
+  }
+}

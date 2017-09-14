@@ -1,0 +1,25 @@
+.cita {
+  padding: 3%;
+  &__content{
+    font-family: $font-title;
+    &__title{
+      font-size: 2em;
+      text-align: center;
+      font-family: $font-text;
+      color: color(primero);
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 1em;
+    }
+    &__card{
+      background: color(primero);
+      &__title{
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: color(blanco);
+        background: color(primero);
+      }
+    }
+  }
+}

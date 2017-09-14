@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load  staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+
+{% endblock css %}
+
+{% block js %}
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/foundation.min.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+{% endblock js %}

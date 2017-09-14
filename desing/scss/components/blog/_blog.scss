@@ -24,3 +24,32 @@
     font-family: $font-title;
   }
 }
+
+.blog-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+  &__input{
+    width: 50%;
+    margin: 0px;
+    @include hasta(1000px){
+      width: 80%;
+    };
+  }
+  &__btn{
+    background: color(sexto);
+    border: none;
+    color: color(blanco);
+    padding: {
+      top:0.65em;
+      bottom: 0.65em;
+      left: 1em;
+      right: 1em;
+    }
+    &:hover{
+      cursor: pointer;
+      background: color(primero);
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar header" id="responsive-menu">
+  <div class="top-bar-left header-left">
+    <ul class="menu">
+      <h1 class="header__logo">
+        <a href="/" class="header__logo__link">Neunapp</a>
+      </h1>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu__item">
+        <a href="{% url 'cotizacion_app:cotizacion-index' %}" class="menu__item__link">Cotizacion</a>
+      </li>
+      <li class="menu__item">
+        <a href="{% url 'productos_app:productos-index' %}" class="menu__item__link">Vitrina</a>
+      </li>
+      <li class="menu__item">
+        <a href="{% url 'blog_app:blog-index' %}" class="menu__item__link">Blog</a>
+      </li>
+      <li class="menu__item">
+        <a href="#" class="menu__item__link">Clientes</a>
+      </li>
+      <li class="menu__item">
+        <a href="{% url 'productos_app:productos_cita-index' %}" class="menu__item__link">Cita</a>
+      </li>
+    </ul>
+  </div>
+</div>

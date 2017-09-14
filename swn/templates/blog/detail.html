@@ -1,37 +1,54 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog {{ object.name }}</title>
-</head>
-<body>
+{% extends "blog/base_blog.html" %}
 
-<h1>{{ object.title }}</h1>
-<p>{{ object.image }}</p>
--------------------------------
-<p>{{ object.description }}</p>
-----------------------------
-<p>{{ object.content }}</p>
----------------------
-<p>{{ object.score }}</p>
----------------------
-<p>{{ object.author }}</p>
+{% load  staticfiles %}
 
-<form action="#" method="POST">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Send request">
-</form>
+{% load thumbnail %}
 
-{% for c in commentary  %}
-    <p>Fecha de creacion: {{ c.created }}</p>
-   <p>Apodo: {{ c.nick }}</p>
-   <p>Comentario: {{ c.description }} </p>
-    -----------------------------------------------
-{% endfor %}
+{% load l10n %}
 
-</body>
-</html>
+{% block title %}
+  Sistemas web Cusco | {{object.title}}
+{% endblock %}
+
+{% block description %}
+  {{ object.description }}
+{% endblock %}
+
+{% block tags %} {% for tag in blog.tag.all %}{{tag}}, {% endfor %} {% endblock tags %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <!-- Inicio detalle blog -->
+  <div class="grid-container blog-detail">
+    <div class="grid-x align-center blog-detail__header">
+      <div class="cell small-12 medium-6 blog-detail__header__fondo">
+        <img src="{{object.image.url}}" alt="" class="blog-detail__header__fondo__img">
+      </div>
+      <div class="cell small-12 medium-6 blog-detail__header__content">
+        <p class="blog-detail__header__content__title">{{object.title}}</p>
+        <p class="blog-detail__header__content__author">Autor: {{object.author}}</p>
+        <p class="blog-detail__header__content__text">
+          {{object.description}}
+        </p>
+      </div>
+    </div>
+
+    <div class="grid-x align-center">
+      <p class="cell blog-detail-resume">
+        {{object.content|safe}}
+      </p>
+    </div>
+
+    <div class="grid-x grid-margin-x align-center">
+      {% for tag in blog.tag.all %}
+      <div class="small-6 medium-4 large-2">
+        <p class="blog-detail-tag">{{tag}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Fin detalle blog -->
+
+  {% include "include/footer.html" %}
+{% endblock %}

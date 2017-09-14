@@ -65,7 +65,7 @@ class Blog(TimeStampedModel):
     content = RichTextUploadingField('contenido')
     category = models.ForeignKey(Category, verbose_name='categoria')
     image = models.ImageField(upload_to='blog', verbose_name='imagen')
-    slug = models.SlugField(editable=False, max_length=200)
+    slug = models.SlugField(editable=False, max_length=250)
     views = models.PositiveIntegerField('vistas', default=0, editable=False)
     tag = models.ManyToManyField(Tag, verbose_name='tag')
     published = models.BooleanField('publicado', default='false')

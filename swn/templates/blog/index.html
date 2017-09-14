@@ -1,0 +1,43 @@
+{% extends "blog/base_blog.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Sistemas web Cusco | empresas y tecnologia
+{% endblock %}
+
+{% block description %}
+  Construimos Sistemas web, y diseño de paginas web, estamos en cusco. quieres una aplicacion movil, una pagina web,
+  un sistema para tu empresa.
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <!-- Inicio de Blog -->
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x blog">
+      <h1 class="cell blog__title">Nuestros articulos en: Tecnologia - Empresas - Emprendimiento - Software</h1>
+      <div class="cell samll-12">
+        <form class="blog-form" method="get"> {% csrf_token %}
+          {{form.kword}}
+          <input type="submit" class="blog-form__btn" name="buscar" value="Buscar">
+        </form>
+      </div>
+      {% for blog in blogs  %}
+        <div class="cell small-12 medium-6 large-4 blog-item">
+          <img src="{{blog.image.url}}" alt="{{blog.title}}" class="blog-item__img">
+          <p><a href="{% url 'blog_app:blog-detail' blog.slug %}" class="blog-item__title">{{blog.title}}</a></p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Fin de Blog -->
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

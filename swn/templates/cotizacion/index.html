@@ -1,0 +1,111 @@
+{% extends "cotizacion/base_cotizacion.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Sistemas web Cusco | realiza la cotizacion de tu pagina web y la cotizacion de tu sistema web.
+{% endblock %}
+
+{% block description %}
+  Construimos Sistemas web, y diseño de paginas web, estamos en cusco. quieres una aplicacion movil, una pagina web,
+  un sistema para tu empresa.
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <!-- Inicio de cotizacion-->
+  <!-- banner de cotizacion-->
+  <div class="banner-cotizacion">
+    <img src="{% static 'img/banner.jpg' %}" alt="" class="banner-cotizacion__fondo">
+    <div class="banner-cotizacion__experts">
+      <div class="banner-cotizacion__experts__info">
+        <h2 class="banner-cotizacion__experts__info__title">Hablar con un especialista</h2>
+        <p class="banner-cotizacion__experts__info__text">
+          Tambien puedes contactar directamente con nuestrtos espcialistas, escribiendo un correo, nuestros especialistas te atenderan de inmediato.
+        </p>
+      </div>
+      <div class="banner-cotizacion__experts__item">
+        <img src="{% static 'img/sa.jpg' %}" alt="" class="banner-cotizacion__experts__item__img">
+        <h4 class="banner-cotizacion__experts__item__title">Softare a Medida</h4>
+        <p class="banner-cotizacion__experts__item__email">daniel@neunapp.com</p>
+      </div>
+      <div class="banner-cotizacion__experts__item">
+        <img src="{% static 'img/pw.png' %}" alt="" class="banner-cotizacion__experts__item__img">
+        <h4 class="banner-cotizacion__experts__item__title">Diseño Paginas Web</h4>
+        <p class="banner-cotizacion__experts__item__email">henrry@neunapp.com</p>
+      </div>
+      <div class="banner-cotizacion__experts__item">
+        <img src="{% static 'img/apps2.png' %}" alt="" class="banner-cotizacion__experts__item__img">
+        <h4 class="banner-cotizacion__experts__item__title">Aplicaciones moviles</h4>
+        <p class="banner-cotizacion__experts__item__email">anibal@neunapp.com</p>
+      </div>
+    </div>
+  </div>
+  <!-- banner de cotizacion-->
+
+  <div class="grid-container">
+    <!-- cotizacion-header -->
+    <div class="grid-x align-center cotizacion-header">
+      <h1 class="cotizacion-header__title">¿Cuanto cuesta mi proyecto?</h1>
+      <div class="cell cotizacion-header__amount">
+        <p class="cotizacion-header__amount__title">Monto Aproximado:</p>
+        <p class="cotizacion-header__amount__total"> S/. 20000</p>
+      </div>
+    </div>
+    <!-- fin cotizacion-header -->
+
+    <div class="grid-x align-center cotizacion-questions">
+      <h2 class="cotizacion-questions__title">¿Para que tipo de empresa quiere el proyecto?</h2>
+      <p class="cell cotizacion-questions__subtitle">Dependiendo del rubro o la necesidad de su empresa seleccione la opcion que mas se asemeje</p>
+      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
+        <img class="questions__answer__img" src="{% static 'img/c1.jpg' %}" alt="">
+        <div class="questions__answer__content first-answer">
+          <p class="questions__answer__content__title">Pagina web para marketing</p>
+          <p class="questions__answer__content__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+          </p>
+          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 900</a>
+        </div>
+      </div>
+      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
+        <img class="questions__answer__img" src="{% static 'img/c2.png' %}" alt="">
+        <div class="questions__answer__content second-answer">
+          <p class="questions__answer__content__title">Pagina web para marketing</p>
+          <p class="questions__answer__content__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+          </p>
+          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 900</a>
+        </div>
+      </div>
+      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
+        <img class="questions__answer__img" src="{% static 'img/c3.png' %}" alt="">
+        <div class="questions__answer__content third-answer">
+          <p class="questions__answer__content__title">Pagina web para marketing</p>
+          <p class="questions__answer__content__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+          </p>
+          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 12900</a>
+        </div>
+      </div>
+      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
+        <img class="questions__answer__img" src="{% static 'img/c4.jpg' %}" alt="">
+        <div class="questions__answer__content forth-answer">
+          <p class="questions__answer__content__title">Pagina web para marketing</p>
+          <p class="questions__answer__content__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+          </p>
+          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 900</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin de cotizacion-->
+
+  {% include "include/footer.html" %}
+
+{% endblock %}
