@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d10f33b1-4402-48b0-9965-fb217a7c8cac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swn/applications/productos/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swn/applications/productos/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/swn/templates/producto/citationbyproductadd.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/swn/templates/home/addcitation.html" afterPath="$PROJECT_DIR$/swn/templates/producto/addcitation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/7070f6d2-0c60-4668-b83b-5ab2149d61b3/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/7070f6d2-0c60-4668-b83b-5ab2149d61b3/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/7070f6d2-0c60-4668-b83b-5ab2149d61b3/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/7070f6d2-0c60-4668-b83b-5ab2149d61b3/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/7070f6d2-0c60-4668-b83b-5ab2149d61b3.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/7070f6d2-0c60-4668-b83b-5ab2149d61b3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/neunapp.iml" afterPath="$PROJECT_DIR$/.idea/neunapp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/applications/home/forms.py" afterPath="$PROJECT_DIR$/swn/applications/home/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/applications/home/models.py" afterPath="$PROJECT_DIR$/swn/applications/home/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/applications/home/urls.py" afterPath="$PROJECT_DIR$/swn/applications/home/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/applications/home/views.py" afterPath="$PROJECT_DIR$/swn/applications/home/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/applications/productos/admin.py" afterPath="$PROJECT_DIR$/swn/applications/productos/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/applications/productos/models.py" afterPath="$PROJECT_DIR$/swn/applications/productos/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/applications/productos/views.py" afterPath="$PROJECT_DIR$/swn/applications/productos/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swn/swn/urls.py" afterPath="$PROJECT_DIR$/swn/swn/urls.py" />
-    </list>
+    <list default="true" id="d10f33b1-4402-48b0-9965-fb217a7c8cac" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,11 +154,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swn/applications/blog/views.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/swn/applications/productos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="64" column="7" lean-forward="false" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="37" />
+            <state relative-caret-position="173">
+              <caret line="33" column="87" lean-forward="false" selection-start-line="33" selection-start-column="87" selection-end-line="33" selection-end-column="87" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -184,14 +166,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/swn/applications/productos/models.py">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/swn/applications/productos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="33" column="87" lean-forward="false" selection-start-line="33" selection-start-column="87" selection-end-line="33" selection-end-column="87" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="168">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -794,7 +774,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29294118" sideWeight="0.083243825" order="7" side_tool="true" content_ui="tabs" />
@@ -805,7 +786,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18313642" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23039742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@neunapp" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@neunapp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26117647" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1071,16 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swn/applications/productos/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#63#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swn/applications/clientes/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1271,11 +1242,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swn/applications/productos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="173">
           <caret line="33" column="87" lean-forward="false" selection-start-line="33" selection-start-column="87" selection-end-line="33" selection-end-column="87" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swn/applications/productos/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
