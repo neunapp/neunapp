@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import include, url
 from . import views
 
@@ -8,9 +9,4 @@ urlpatterns = [
         name='index'
     ),
     #
-    url(r'^citacion/$',
-        views.CitationCreateView.as_view(),
-        name='home_citation-add'
-    ),
-
 ]

@@ -72,14 +72,12 @@
   <!-- Productos-->
   <div class="grid-x align-center prods">
     <div class="cell small-12 large-5 prods__content">
-      <p class="prods__content__title">Plataforma para venta de productos al por mayor</p>
+      <p class="prods__content__title">{{producto_1.name}}</p>
       <p class="prods__content__text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        {{producto_1.description_show}}
       </p>
       <div class="prods__content__btns">
-        <a class="prods__content__btns__item secundario" href="#">
+        <a class="prods__content__btns__item secundario" href="{% url 'productos_app:productos-detail' producto_1.slug %}">
           <i class="fa fa-play-circle-o fa-1x prods__icon" aria-hidden="true"></i>
           Ver Producto
         </a>
@@ -90,20 +88,18 @@
       </div>
     </div>
     <div class="cell small-12 large-5 prods__image">
-      <img class="prods__image__img" src="{% static 'img/2.jpg' %}" alt="">
+      <img class="prods__image__img" src="{{producto_1.image.url}}" alt="{{producto_2.name}}">
     </div>
   </div>
 
   <div class="grid-x align-center prods grid-secondary">
     <div class="cell small-12 large-5 prods__content">
-      <p class="prods__content__title">Plataforma de cursos online</p>
+      <p class="prods__content__title">{{producto_2.name}}</p>
       <p class="prods__content__text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        {{producto_2.description_show}}
       </p>
       <div class="prods__content__btns">
-        <a class="prods__content__btns__item secundario" href="#">
+        <a class="prods__content__btns__item secundario" href="{% url 'productos_app:productos-detail' producto_2.slug %}">
           <i class="fa fa-play-circle-o fa-1x prods__icon" aria-hidden="true"></i>
           Ver Producto
         </a>
@@ -114,20 +110,18 @@
       </div>
     </div>
     <div class="cell small-12 large-5 prods__image">
-      <img class="prods__image__img" src="{% static 'img/4.jpg' %}" alt="">
+      <img class="prods__image__img" src="{{producto_2.image.url}}" alt="{{producto_2.name}}">
     </div>
   </div>
 
   <div class="grid-x align-center prods">
     <div class="cell small-12 large-5 prods__content">
-      <p class="prods__content__title">Plataforma web para atencion de restaurant</p>
+      <p class="prods__content__title">{{producto_3.name}}</p>
       <p class="prods__content__text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        {{producto_3.description_show}}
       </p>
       <div class="prods__content__btns">
-        <a class="prods__content__btns__item secundario" href="#">
+        <a class="prods__content__btns__item secundario" href="{% url 'productos_app:productos-detail' producto_3.slug %}">
           <i class="fa fa-play-circle-o fa-1x prods__icon" aria-hidden="true"></i>
           Ver Producto
         </a>
@@ -138,20 +132,18 @@
       </div>
     </div>
     <div class="cell small-12 large-5 prods__image">
-      <img class="prods__image__img" src="{% static 'img/2.jpg' %}" alt="">
+      <img class="prods__image__img" src="{{producto_3.image.url}}" alt="{{producto_3.name}}">
     </div>
   </div>
 
   <div class="grid-x align-center prods grid-secondary">
     <div class="cell small-12 large-5 prods__content">
-      <p class="prods__content__title">Plataforma web para ventas online</p>
+      <p class="prods__content__title">{{producto_4.name}}</p>
       <p class="prods__content__text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        {{producto_4.description_show}}
       </p>
       <div class="prods__content__btns">
-        <a class="prods__content__btns__item secundario" href="#">
+        <a class="prods__content__btns__item secundario" href="{% url 'productos_app:productos-detail' producto_4.slug %}">
           <i class="fa fa-play-circle-o fa-1x prods__icon" aria-hidden="true"></i>
           Ver Producto
         </a>
@@ -162,7 +154,7 @@
       </div>
     </div>
     <div class="cell small-12 large-5 prods__image">
-      <img class="prods__image__img" src="{% static 'img/4.jpg' %}" alt="">
+      <img class="prods__image__img" src="{{producto_4.image.url}}" alt="{{producto_4.name}}">
     </div>
   </div>
   <!-- fin de productos-->

@@ -7,6 +7,7 @@ urlpatterns = [
         views.BlogView.as_view(),
         name='blog-index'
     ),
+    #url para ver el detalede un blog
     url(r'^blog-leer/(?P<slug>[-\w]+)/$',
         views.BLogDetailview.as_view(),
         name='blog-detail'

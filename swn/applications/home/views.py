@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-#import python library
-import re
-import sys
-
 #django library
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.views.generic import (
@@ -18,9 +14,11 @@ from django.views.generic import (
 
 #import app blog
 from applications.blog.models import Blog
+#import app productos
+from applications.productos.models import Product
 
 #import forms.py
-from .forms import CitationForm, SuscriptionForm
+from .forms import SuscriptionForm
 
 
 # Create your views here.
@@ -34,22 +32,11 @@ class HomeView(CreateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['blogs'] = Blog.objects.search_blog('')[:3]
+        #recupeamos productos principales
+        prods = Product.objects.principal_product()
+        #enviamos prods al home
+        context['producto_1'] = prods[0]
+        context['producto_2'] = prods[1]
+        context['producto_3'] = prods[2]
+        context['producto_4'] = prods[3]
         return context
-
-
-# Create your views here.
-class CitationCreateView(CreateView):
-    '''registrar un proveedor'''
-
-    form_class = CitationForm
-    success_url = reverse_lazy('home_app:home_citation-add')
-    template_name = 'home/addcitation.html'
-
-    def form_valid(self, form):
-        citation = form.save(commit=False)
-        #email = form.cleaned_data['email']
-        #phone = form.cleaned_data['phone']
-        #regex = re.match("(\w+)@(\wnet|com]", sys.argv[1])
-        citation.save()
-
-        return super(CitationCreateView, self).form_valid(form)

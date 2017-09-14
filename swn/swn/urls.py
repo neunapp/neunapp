@@ -22,8 +22,14 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #urls para aplicacion blog
     url(r'^', include('applications.home.urls', namespace='home_app')),
+    #url para aplicicon cotizacion
     url(r'^', include('applications.cotizacion.urls', namespace='cotizacion_app')),
+    #url para aplicacion productos
     url(r'^', include('applications.productos.urls', namespace='productos_app')),
+    #url para aplicacion blog
     url(r'^', include('applications.blog.urls', namespace="blog_app")),
+
+    #url para editor de texto
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

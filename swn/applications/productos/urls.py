@@ -7,9 +7,19 @@ urlpatterns = [
         views.ProductosView.as_view(),
         name='productos-index'
     ),
+    #url para ver el detalede un producto
+    url(r'^software-cusco/(?P<slug>[-\w]+)/$',
+        views.ProductDetailview.as_view(),
+        name='productos-detail'
+    ),
     #url para index de cita
     url(r'^registrar-cita/$',
-        views.CitationView.as_view(),
+        views.CitationCreateView.as_view(),
         name='productos_cita-index'
+    ),
+    #url para registrar cita de producto
+    url(r'^reservar-cita/(?P<slug>[-\w]+)/(?P<pk>\d+)/$',
+        views.CitationProductCreateView.as_view(),
+        name='product_cita-add'
     ),
 ]

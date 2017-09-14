@@ -1,0 +1,124 @@
+{% extends "productos/base_productos.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Sistemas web Cusco | {{product.name}}
+{% endblock %}
+
+{% block description %}
+  {{product.description_show}}
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <div class="banner-vitrina-detail">
+    <img src="{{product.image.url}}" alt="{{product.name}}" class="banner-vitrina-detail__img">
+    <div class="banner-vitrina-detail__content">
+      <div class="banner-vitrina-detail__content__copy">
+        <h1 class="banner-vitrina-detail__content__copy__title">{{product.name}}</h1>
+        <p class="banner-vitrina-detail__content__copy__text">Solicita una cotizacion del producto y te atenderemos</p>
+        <form class="banner-vitrina-detail__content__copy__form">
+          <input type="text" name="" value="" placeholder="Email">
+          <input type="text" name="" value="" placeholder="Telefono">
+          <input type="submit" class="banner-vitrina-detail__content__copy__form__btn" name="solicitar" value="Solicitar">
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- inicio slogan del producto -->
+  <div class="grid-x align-center vitrina-detail">
+    <h3 class="cell vitrina-detail__title">{{product.slogan}}</h3>
+    <div class="cell samll-12 large-4 vitrina-detail__video">
+      <iframe class="vitrina-detail__video__video" src="{{product.video}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="cell small-12 large-8 grid-x grid-margin-x vitrina-detail__description">
+      <div class="cell small-12 medium-6 vitrina-detail__description__item">
+        <p class="vitrina-detail__description__item__title">
+          <i class="fa fa-apple" aria-hidden="true"></i>
+          Diseño Responsive
+        </p>
+        <p class="vitrina-detail__description__item__text">
+          su pagina sera adabpable a cuaquier dipsotivo, teniendo siempre una presentacion agradable.
+        </p>
+      </div>
+      <div class="cell small-12 medium-6 vitrina-detail__description__item">
+        <p class="vitrina-detail__description__item__title">
+          <i class="fa fa-apple" aria-hidden="true"></i>
+          Diseño Responsive
+        </p>
+        <p class="vitrina-detail__description__item__text">
+          su pagina sera adabpable a cuaquier dipsotivo, teniendo siempre una presentacion agradable.
+        </p>
+      </div>
+      <div class="cell small-12 medium-6 vitrina-detail__description__item">
+        <p class="vitrina-detail__description__item__title">
+          <i class="fa fa-apple" aria-hidden="true"></i>
+          Diseño Responsive
+        </p>
+        <p class="vitrina-detail__description__item__text">
+          su pagina sera adabpable a cuaquier dipsotivo, teniendo siempre una presentacion agradable.
+        </p>
+      </div>
+      <div class="cell small-12 medium-6 vitrina-detail__description__item">
+        <p class="vitrina-detail__description__item__title">
+          <i class="fa fa-apple" aria-hidden="true"></i>
+          Diseño Responsive
+        </p>
+        <p class="vitrina-detail__description__item__text">
+          su pagina sera adabpable a cuaquier dipsotivo, teniendo siempre una presentacion agradable.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- fin slogan del producto -->
+
+  <!-- comentarios del producto-->
+  <div class="grid-x grid-margin-x align-center vitrina-detail__comentarys">
+    <div class="cell small-12 large-6 vitrina-detail__comentary">
+      <img src="/img/avatar.jpg" alt="" class="vitrina-detail__comentary__img">
+      <p class="vitrina-detail__comentary__text">
+        Me siento feliz por haber adquiro este sistema, ahora pudeo llevar muy facil el control de mis ventas y puedo ver que invertir
+        el trabajo e mi empresa ahora es mas controlado.
+      </p>
+    </div>
+    <div class="cell small-12 large-6 vitrina-detail__comentary">
+      <img src="/img/avatar.jpg" alt="" class="vitrina-detail__comentary__img">
+      <p class="vitrina-detail__comentary__text">
+        Me siento feliz por haber adquiro este sistema, ahora pudeo llevar muy facil el control de mis ventas y puedo ver que invertir
+        el trabajo e mi empresa ahora es mas controlado.
+      </p>
+    </div>
+    <div class="cell small-12 large-6 vitrina-detail__comentary">
+      <img src="/img/avatar.jpg" alt="" class="vitrina-detail__comentary__img">
+      <p class="vitrina-detail__comentary__text">
+        Me siento feliz por haber adquiro este sistema, ahora pudeo llevar muy facil el control de mis ventas y puedo ver que invertir
+        el trabajo e mi empresa ahora es mas controlado.
+      </p>
+    </div>
+    <div class="cell small-12 large-6 vitrina-detail__comentary">
+      <img src="/img/avatar.jpg" alt="" class="vitrina-detail__comentary__img">
+      <p class="vitrina-detail__comentary__text">
+        Me siento feliz por haber adquiro este sistema, ahora pudeo llevar muy facil el control de mis ventas y puedo ver que invertir
+        el trabajo e mi empresa ahora es mas controlado.
+      </p>
+    </div>
+  </div>
+  <!-- fin mas detale de producto -->
+
+  <!-- descripcion general del producto -->
+  <div class="grid-x vitrina-detail__resume">
+    <p class="grid-x vitrina-detail__resume__text">
+      {{product.content|safe}}
+    </p>
+  </div>
+  <!-- fin descripcion general del producto -->
+
+  {% include "include/footer.html" %}
+
+{% endblock %}
