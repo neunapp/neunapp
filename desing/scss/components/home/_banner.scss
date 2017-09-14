@@ -1,0 +1,93 @@
+.banner {
+  text-align: center;
+  position: relative;
+  &__copy{
+    background-color:rgba(0,0,0,0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: color(blanco);
+    align-items: center;
+    &__title{
+      font-family: $font-title;
+    }
+    &__text{
+      font-family: $font-text;
+      @include hasta(600px){
+        font-size: 0.7em;
+      };
+    }
+  }
+}
+
+.banner__copy__controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__btn{
+    padding: {
+      left: 2em;
+      right: 2em;
+      top: 0.7em;
+      bottom: 0.7em;
+    };
+    color: color(blanco);
+    margin: 1em;
+    border-radius: 10px;
+    &:hover{
+      color: color(blanco);
+    }
+    @include hasta(600px){
+      font-size: 0.8em;
+      margin-top: 2em;
+      padding: {
+        left: 2em;
+        right: 2em;
+        top: 0.5em;
+        bottom: 0.5em;
+      };
+    };
+  }
+}
+
+.principal{
+  background: color(primero);
+  &:hover{
+    background: color(quinto);
+  }
+}
+
+.secundario{
+  background: color(segundo);
+  &:hover{
+    background: color(tercero);
+  }
+}
+
+.banner-container {
+  @include hasta(620px){
+    height: 200px;
+  };
+  @include desde_hasta(600px, 640px){
+    height: 330px;
+  };
+  @include desde(640px){
+    height: 500px;
+  };
+}
+
+.banner-img {
+  @include hasta(620px){
+    height: 200px;
+  };
+  @include desde_hasta(600px, 640px){
+    height: 330px;
+  };
+  @include desde(640px){
+    height: 500px;
+  };
+}

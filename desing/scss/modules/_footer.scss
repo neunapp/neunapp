@@ -1,0 +1,72 @@
+.footer {
+  background: #eeeeee;
+  padding: {
+    top: 2em;
+    bottom: 2em;
+    left: 2em;
+    right: 2em;
+  };
+  text-align: center;
+  &__title{
+    color: color(tercero);
+    font-weight: bold;
+    font-family: $font-title;
+    margin-bottom: 1.5em;
+  }
+  &__btn__principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: {
+      top: 1em;
+      bottom: 1em;
+      left: 1.5em;
+      right: 1.5em;
+    };
+    background: color(segundo);
+    color: color(blanco);
+    border-radius: 10px;
+    &:hover{
+      color: color(blanco);
+      background: color(cuarto);
+    }
+    @include hasta(620px){
+      padding: {
+        top: 0.6em;
+        bottom: 0.6em;
+        left: 1em;
+        right: 1em;
+      };
+    };
+  }
+  &__btn__secundario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: {
+      top: 1em;
+      bottom: 1em;
+      left: 1.5em;
+      right: 1.5em;
+    };
+    background: color(quinto);
+    color: color(blanco);
+    border-radius: 10px;
+    &:hover{
+      color: color(blanco);
+      background: color(tercero);
+    }
+    @include hasta(620px){
+      padding: {
+        top: 0.6em;
+        bottom: 0.6em;
+        left: 1em;
+        right: 1em;
+      };
+    };
+  }
+}
+
+.footer__icon {
+  margin-right: 0.3em;
+}

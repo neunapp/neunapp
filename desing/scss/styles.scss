@@ -1,0 +1,40 @@
+//archivo principal o main scss
+
+//archivos base foundation
+@import "app";
+
+//archivos base para font awesone
+@import "font-awesome/scss/font-awesome";
+
+//archivos de configuracion
+@import "config";
+
+//estilos base
+@import "base/base";
+
+// modulos
+@import "modules/header";
+@import "modules/footer";
+@import "modules/menu";
+
+
+//componentes
+//componnents/home
+@import "components/home/banner";
+@import "components/home/prods";
+@import "components/home/services";
+@import "components/home/suscription";
+@import "components/home/recents";
+//componnents/cotizacion
+@import "components/cotizacion/banner";
+@import "components/cotizacion/header";
+@import "components/cotizacion/question";
+//componnents/vitrina
+@import "components/vitrina/vitrina";
+@import "components/vitrina/vitrina-prod";
+@import "components/vitrina/vitrina-content";
+@import "components/vitrina/vitrina-detail";
+@import "components/vitrina/vitrina-detail-description";
+//componnents/blog
+@import "components/blog/blog";
+@import "components/blog/blog-detail";

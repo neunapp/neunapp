@@ -1,0 +1,11 @@
+.vitrina-prod {
+  box-shadow: 1px 1px 1px 1px rgba(196,194,196,1);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2em;
+  margin-bottom: 2em;
+  @include hasta(1024px){
+    padding: 1em;
+  };
+}
