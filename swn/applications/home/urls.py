@@ -8,5 +8,9 @@ urlpatterns = [
         views.HomeView.as_view(),
         name='index'
     ),
-    #
+    #url para mensaje
+    url(r'^solicitud-confirmada/$',
+        views.MensajeView.as_view(),
+        name='mensaje'
+    ),
 ]

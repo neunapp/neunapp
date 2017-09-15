@@ -77,6 +77,7 @@ class Citation(TimeStampedModel):
     name = models.CharField('nombre', max_length=40)
     hour_atention = models.CharField('hora de atencion', max_length= 40)
     day_atention = models.CharField('dia de atencion', max_length= 40)
+    messagge = models.TextField('mensaje',blank=True)
 
     class Meta:
         verbose_name = 'citacion'

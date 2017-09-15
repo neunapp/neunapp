@@ -52,7 +52,7 @@ class CitationCreateView(CreateView):
     ''' registrar una nueva cita '''
 
     form_class = CitationForm
-    success_url = reverse_lazy('producto_app:home_citation-add')
+    success_url = reverse_lazy('home_app:mensaje')
     template_name = 'productos/cita/index.html'
 
 

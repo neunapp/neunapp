@@ -4,7 +4,7 @@ from django import forms
 from .models import Citation
 
 class CitationForm(forms.ModelForm):
-    """ 
+    """
     formulario para agregar citaciones
     """
 
@@ -16,46 +16,44 @@ class CitationForm(forms.ModelForm):
             'address',
             'name',
             'hour_atention',
-            'day_atention'
+            'day_atention',
+            'messagge'
         )
         widgets = {
             'email': forms.TextInput(
                 attrs={
-                    'placeholder': 'correo',
+                    'placeholder': 'Correo electronico',
                 }
             ),
             'phone': forms.TextInput(
                 attrs={
-                    'placeholder': 'telefono',
+                    'placeholder': 'Telefonos',
                 }
             ),
             'address': forms.TextInput(
                 attrs={
-                    'placeholder': 'direccion',
+                    'placeholder': 'Direccion',
                 }
             ),
             'name': forms.TextInput(
                 attrs={
-                    'placeholder': 'nombre',
+                    'placeholder': 'Nombre o Empresa',
                 }
             ),
             'hour_atention': forms.TextInput(
                 attrs={
-                    'placeholder': 'hora de atencion',
+                    'placeholder': 'En que horarios podemos llamarlo',
                 }
             ),
             'day_atention': forms.TextInput(
                 attrs={
-                    'placeholder': 'dia de atencion',
+                    'placeholder': 'Que dias podemos llamarlo',
+                }
+            ),
+            'messagge': forms.Textarea(
+                attrs={
+                    'placeholder': 'Dejenos un mensaje...',
+                    'rows':'4',
                 }
             ),
         }
-
-
-
-
-
-
-
-
-

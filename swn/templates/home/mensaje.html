@@ -1,0 +1,40 @@
+{% extends "home/base_home.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Sistemas web Cusco | desarrollo de sistemas web | diseño de paginas web en cusco
+{% endblock %}
+
+{% block description %}
+  Construimos Sistemas web, y diseño de paginas web, estamos en cusco. quieres una aplicacion movil, una pagina web,
+  un sistema para tu empresa.
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <!-- tarjeta de confirmacion -->
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-center mensaje">
+      <div class="cell small-12 large-8 mensaje__content">
+        <div class="callout mensaje__content__card">
+          <h5 class="mensaje__content__card__title">
+            Solicitud Registrada
+            <i class="fa fa-smile-o" aria-hidden="true"></i>
+          </h5>
+          <p class="mensaje__content__card__text">Hemos registrado su solicitud, muy pronto estaremos en contacto con Ud.</p>
+          <a href="/" class="mensaje__content__card__link">Seguir navegando por Neunapp.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin tarjeta de confirmacion -->
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

@@ -21,7 +21,10 @@ from applications.productos.models import Product
 from .forms import SuscriptionForm
 
 
-# Create your views here.
+class MensajeView(TemplateView):
+    template_name = 'home/mensaje.html'
+
+
 class HomeView(CreateView):
     '''registrar nuevo registro de suscripcion'''
 
