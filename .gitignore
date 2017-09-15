@@ -99,7 +99,7 @@ desing/scss/styles.scss
 
 # Secrect json
 
-swn/secrets.json
+#swn/secrets.json
 
 !__init__.py
 
