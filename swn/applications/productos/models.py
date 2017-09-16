@@ -104,7 +104,9 @@ class ProductSolicitude(TimeStampedModel):
 
     producto = models.ForeignKey(
         Product,
-        verbose_name='producto_solicitud'
+        verbose_name='producto_solicitud',
+        blank=True,
+        null=True
     )
     email = models.EmailField('email')
     phone = models.CharField('celular', max_length=30)

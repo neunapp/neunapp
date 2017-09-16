@@ -1,7 +1,7 @@
 
 from django import forms
 
-from .models import Citation
+from .models import Citation, ProductSolicitude
 
 class CitationForm(forms.ModelForm):
     """
@@ -54,6 +54,31 @@ class CitationForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'Dejenos un mensaje...',
                     'rows':'4',
+                }
+            ),
+        }
+
+
+class ProductSolicitudeForm(forms.ModelForm):
+    """
+    formulario para registrar solicitud de producto
+    """
+
+    class Meta:
+        model = ProductSolicitude
+        fields = (
+            'email',
+            'phone',
+        )
+        widgets = {
+            'email': forms.TextInput(
+                attrs={
+                    'placeholder': 'Correo electronico',
+                }
+            ),
+            'phone': forms.TextInput(
+                attrs={
+                    'placeholder': 'Telefono o Celular',
                 }
             ),
         }

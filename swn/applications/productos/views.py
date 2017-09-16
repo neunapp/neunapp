@@ -18,7 +18,7 @@ from django.views.generic import (
 from django.views.generic.edit import FormView
 
 #import forms.py
-from .forms import CitationForm
+from .forms import CitationForm, ProductSolicitudeForm
 
 #import models.py
 from .models import Citation, Product, ProductPropertys
@@ -38,20 +38,32 @@ class ProductosView(ListView):
         return queryset
 
 
-class ProductDetailview(DetailView):
+class ProductDetailview(CreateView):
     """
     vista que muetra el detalle de un producto
     """
 
-    model = Product
+    form_class = ProductSolicitudeForm
+    success_url = reverse_lazy('home_app:mensaje')
     template_name = 'productos/producto/detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailview, self).get_context_data(**kwargs)
+        product = Product.objects.get(slug=self.kwargs['slug'])
+        context['product'] = product
         context['propiedades'] =  ProductPropertys.objects.filter(
-            producto__pk=self.get_object().pk,
+            producto__pk=product.pk,
         )
         return context
+
+    def form_valid(self, form):
+        #recuperamos producto
+        product = Product.objects.get(slug=self.kwargs['slug'])
+        solicitude = form.save(commit=False)
+        #
+        solicitude.producto = product
+        solicitude.save()
+        return super(ProductDetailview, self).form_valid(form)
 
 
 # Create your views here.

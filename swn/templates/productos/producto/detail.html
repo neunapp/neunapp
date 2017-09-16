@@ -23,9 +23,9 @@
       <div class="banner-vitrina-detail__content__copy">
         <h1 class="banner-vitrina-detail__content__copy__title">{{product.name}}</h1>
         <p class="banner-vitrina-detail__content__copy__text">Solicita una cotizacion del producto y te atenderemos</p>
-        <form class="banner-vitrina-detail__content__copy__form">
-          <input type="text" name="" value="" placeholder="Email">
-          <input type="text" name="" value="" placeholder="Telefono">
+        <form class="banner-vitrina-detail__content__copy__form" method="post">{% csrf_token %}
+          {{form.email}}
+          {{form.phone}}
           <input type="submit" class="banner-vitrina-detail__content__copy__form__btn" name="solicitar" value="Solicitar">
         </form>
       </div>
