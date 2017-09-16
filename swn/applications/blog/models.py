@@ -33,6 +33,7 @@ class Tag(TimeStampedModel):
     def __str__(self):
         return self.name
 
+
 @python_2_unicode_compatible
 class Category(TimeStampedModel):
     """django data model categoria"""

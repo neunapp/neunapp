@@ -21,7 +21,7 @@ from django.views.generic.edit import FormView
 from .forms import CitationForm
 
 #import models.py
-from .models import Citation, Product
+from .models import Citation, Product, ProductPropertys
 
 
 class ProductosView(ListView):
@@ -45,6 +45,13 @@ class ProductDetailview(DetailView):
 
     model = Product
     template_name = 'productos/producto/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailview, self).get_context_data(**kwargs)
+        context['propiedades'] =  ProductPropertys.objects.filter(
+            producto__pk=self.get_object().pk,
+        )
+        return context
 
 
 # Create your views here.

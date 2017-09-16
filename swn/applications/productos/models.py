@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.utils.encoding import python_2_unicode_compatible
 
 # third-party
 from datetime import timedelta, datetime
@@ -15,6 +16,7 @@ from model_utils.models import TimeStampedModel
 from .managers import ProductManager
 
 
+@python_2_unicode_compatible
 class Product(TimeStampedModel):
     """ modelo para Productos """
 
@@ -67,6 +69,7 @@ class Product(TimeStampedModel):
 
 
 
+@python_2_unicode_compatible
 class Citation(TimeStampedModel):
     """ modelo para registrar cita """
 
@@ -95,6 +98,7 @@ class Citation(TimeStampedModel):
 
 
 
+@python_2_unicode_compatible
 class ProductSolicitude(TimeStampedModel):
     """ modelo para registrar soliciutd e un producto """
 
@@ -115,6 +119,7 @@ class ProductSolicitude(TimeStampedModel):
 
 
 
+@python_2_unicode_compatible
 class ProductPropertys(TimeStampedModel):
     """" modelo para registrar propiedades de un producto """
 
@@ -124,7 +129,7 @@ class ProductPropertys(TimeStampedModel):
     )
     title = models.CharField('titulo', max_length=60)
     description = models.CharField('descripcion', max_length=300)
-    icon = models.ImageField('Icono')
+    icon = models.CharField('icono',blank=True, max_length=30)
 
     class Meta:
         verbose_name = 'propiedad producto'
