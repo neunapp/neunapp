@@ -32,10 +32,23 @@
 
 .blog-detail-resume {
   margin-top: 1em;
-  padding: 2em;
+  padding: {
+    left: 10%;
+    right: 10%;
+    top: 1em;
+    bottom: 2em;
+  };
   border: 1px solid;
   border-color: #eeeeee;
   font-family: $font-title;
+  @include hasta(640px){
+    padding: {
+      left: 0.5em;
+      right: 0.5em;
+      top: 1em;
+      bottom: 2em;
+    };
+  };
 }
 
 .blog-detail-tag{
@@ -49,5 +62,8 @@
     bottom: 0.5em;
     left: 2em;
     right: 2em;
+  };
+  @include hasta(640px){
+    padding: 0.5em;
   };
 }

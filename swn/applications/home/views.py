@@ -38,8 +38,8 @@ class HomeView(CreateView):
         #recupeamos productos principales
         prods = Product.objects.principal_product()
         #enviamos prods al home
-        context['producto_1'] = prods[0]
-        context['producto_2'] = prods[1]
-        context['producto_3'] = prods[2]
-        context['producto_4'] = prods[3]
+        context['producto_1'] = prods[3]
+        context['producto_2'] = prods[2]
+        context['producto_3'] = prods[1]
+        context['producto_4'] = prods[0]
         return context

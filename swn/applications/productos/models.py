@@ -42,7 +42,12 @@ class Product(TimeStampedModel):
     def save(self, *args, **kwargs):
         #actualizamos video
         video = self.video.split('/')
-        self.video = "https://www.youtube.com/embed/"+video[3]
+        if len(video) == 4:
+            self.video = "https://www.youtube.com/embed/"+video[3]
+        else:
+            print 'no se guardo nuevo video'
+
+        #
         if not self.id:
             # calculamos el total de segundos de la hora actual
             now = datetime.now()

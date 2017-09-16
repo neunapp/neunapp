@@ -99,13 +99,16 @@ desing/scss/styles.scss
 
 # Secrect json
 
-#swn/secrets.json
+swn/secrets.json
+swn/manage.py
+swn/swn/wsgi.py
 
 !__init__.py
 
 *migrations/*
 
 swn/media/*
+swn/static/img/*
 
 
 swn/applications/blog/migrations/*

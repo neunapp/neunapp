@@ -57,7 +57,20 @@
 }
 
 .vitrina-detail__resume {
-  padding: 2em;
+  padding: {
+    left: 15%;
+    right: 15%;
+    top: 1em;
+    bottom: 2em;
+  };
   font-family: $font-title;
   color: color(tercero);
+  @include hasta(640px){
+    padding: {
+      left: 0.5em;
+      right: 0.5em;
+      top: 1em;
+      bottom: 2em;
+    };
+  };
 }
