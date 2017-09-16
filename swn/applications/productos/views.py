@@ -75,14 +75,20 @@ class CitationCreateView(CreateView):
     template_name = 'productos/cita/index.html'
 
 
-class CitationProductCreateView(FormView):
+class CitationProductCreateView(CreateView):
     """
        vista para registrar una cita de un producto
     """
 
     form_class = CitationForm
-    success_url = reverse_lazy('producto_app:product_citation-add')
-    template_name = 'producto/citationbyproductadd.html'
+    success_url = reverse_lazy('home_app:mensaje')
+    template_name = 'productos/cita/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CitationProductCreateView, self).get_context_data(**kwargs)
+        product = Product.objects.get(pk=self.kwargs['pk'])
+        context['product'] = product
+        return context
 
     def form_valid(self, form):
         pk = self.kwargs['pk']

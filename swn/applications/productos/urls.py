@@ -20,6 +20,6 @@ urlpatterns = [
     #url para registrar cita de producto
     url(r'^reservar-cita/(?P<slug>[-\w]+)/(?P<pk>\d+)/$',
         views.CitationProductCreateView.as_view(),
-        name='product_cita-add'
+        name='productos_cita-add'
     ),
 ]
