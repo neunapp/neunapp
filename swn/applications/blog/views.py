@@ -17,6 +17,9 @@ from django.views.generic import (
 from django.views.generic.edit import FormMixin
 # Create your views here.
 
+#application home
+from applications.home.forms import BlogSuscriptionForm
+
 #app blog
 from .models import Blog, Category, Commentary
 #local forms
@@ -42,13 +45,29 @@ class BlogView(ListView):
         return queryset
 
 
-class BLogDetailview(DetailView):
+class BLogDetailview(FormMixin, DetailView):
     """
     vista que muestra detalle blog
     """
 
     model = Blog
+    #formlario para suscripcion
+    form_class = BlogSuscriptionForm
     template_name = 'blog/detail.html'
+
+    def get_success_url(self):
+        return '.'
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        form.save()
+        return super(BLogDetailview, self).form_valid(form)
 
 
 ###

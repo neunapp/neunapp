@@ -53,8 +53,9 @@
 
 .blog-detail-tag{
   text-align: center;
-  background: #9e9e9e;
-  color: color(blanco);
+  color: color(tercero);
+  border: 1px solid;
+  border-color: color(primero);
   border-radius: 20px;
   margin: 0.5em;
   padding: {
@@ -66,4 +67,36 @@
   @include hasta(640px){
     padding: 0.5em;
   };
+}
+
+.blog-detail__suscription{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  &__title{
+    font-family: $font-text;
+    color: color(tercero);
+    text-align: center;
+  }
+  &__input{
+    margin: 0px;
+    width: 20%;
+  }
+  &__btn{
+    background: color(primero);
+    color: color(blanco);
+    padding: {
+      top: 0.65em;
+      bottom: 0.65em;
+      left: 2em;
+      right: 2em;
+    };
+    border: none;
+    &:hover{
+      background: color(tercero);
+      cursor: pointer;;
+    }
+  }
 }
