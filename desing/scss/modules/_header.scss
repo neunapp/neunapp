@@ -1,8 +1,16 @@
 .header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
   background: #f5f5f5;
   padding-left: 15%;
   padding-right: 15%;
   box-shadow: -1px 1px 10px 3px rgba(102,99,102,0.29);
+  z-index: 200;
+  @include hasta(640px){
+    top: 2.5em;
+  };
   &__logo{
     font-size: 2em;
     &__link{
@@ -19,6 +27,11 @@
 
 .top-bar, .top-bar ul {
   background: #fafafa;
+}
+
+.title-bar{
+  position: fixed;
+  width: 100%;
 }
 
 .menu__item{
@@ -43,4 +56,8 @@
       color: color(blanco);
     }
   }
+}
+
+.header_space{
+  height: 5em;
 }

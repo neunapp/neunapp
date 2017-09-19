@@ -51,6 +51,10 @@
   };
 }
 
+.blog-detail-tags{
+  margin-bottom: 1.2em;
+}
+
 .blog-detail-tag{
   text-align: center;
   color: color(tercero);
@@ -83,6 +87,9 @@
   &__input{
     margin: 0px;
     width: 20%;
+    @include hasta(720px){
+      width: 70%;
+    };
   }
   &__btn{
     background: color(primero);
@@ -94,6 +101,14 @@
       right: 2em;
     };
     border: none;
+    @include hasta(720px){
+      padding: {
+        top: 0.65em;
+        bottom: 0.65em;
+        left: 1em;
+        right: 1em;
+      };
+    };
     &:hover{
       background: color(tercero);
       cursor: pointer;;

@@ -53,9 +53,9 @@
 
     <div class="grid-x grid-margin-x align-center">
       {% for tag in blog.tag.all %}
-      <div class="shrink cell">
-        <a href="#" class="blog-detail-tag">{{tag.name}}</a>
-      </div>
+        <div class="cell shrink blog-detail-tags">
+          <a href="#" class="blog-detail-tag">{{tag.name}}</a>
+        </div>
       {% endfor %}
     </div>
   </div>
