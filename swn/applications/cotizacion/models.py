@@ -12,37 +12,30 @@ from django.contrib.postgres.fields import ArrayField
 
 
 @python_2_unicode_compatible
-class TypeQuote(TimeStampedModel):
-
-    name = models.CharField('nombre', max_length=60)
-    image = models.ImageField('imagen', upload_to='cotizacion')
-
-    class Meta:
-        verbose_name = 'cita'
-        verbose_name_plural = 'citas'
-        ordering = ['-created']
-
-    def __str__(self):
-        return self.name
-
-
-
-@python_2_unicode_compatible
 class RequestQuote(TimeStampedModel):
-    """ 
+    """
         datamodel RequestQuote
     """
-    typequote = models.ForeignKey(TypeQuote, verbose_name='cita')
+
     email = models.EmailField('email')
-    phone = models.CharField('telefono', max_length=12)
-    message= models.CharField('mensaje', max_length=300)
-    amount = models.IntegerField('monto')
-    answer = ArrayField(models.CharField('Respuesta',max_length=7, blank=True))
+    phone = models.CharField('telefono', max_length=12, blank=True)
+    message= models.CharField('mensaje', max_length=300, blank=True)
+    amount = models.IntegerField('monto', default=0)
+    answer = ArrayField(
+        models.CharField('Respuesta',max_length=7, blank=True),
+        blank=True,
+        null=True
+    )
+    question = ArrayField(
+        models.CharField('pregunta',max_length=7, blank=True),
+        blank=True,
+        null=True
+    )
 
 
     class Meta:
-        verbose_name = 'cotizacion'
-        verbose_name_plural = 'cotizaciones'
+        verbose_name = 'Solicitud de Cotizacion'
+        verbose_name_plural = 'Solicitudes de cotizacion'
         ordering = ['-created']
 
     def __str__(self):
@@ -52,8 +45,8 @@ class RequestQuote(TimeStampedModel):
 
 @python_2_unicode_compatible
 class Question(TimeStampedModel):
+    """ modelo para pregunta """
 
-    typequote = models.ForeignKey(TypeQuote, verbose_name='cita')
     question = models.CharField('pregunta', max_length=300)
     description = models.CharField('descripcion', max_length=200)
     order = models.IntegerField('orden')
@@ -70,9 +63,15 @@ class Question(TimeStampedModel):
 
 @python_2_unicode_compatible
 class Answer(TimeStampedModel):
+    """ modelo para respuestas """
 
-    question = models.ForeignKey(Question, verbose_name='pregunta')
-    image = models.ImageField('imagen', upload_to='cotizacion')
+    question = models.ForeignKey(Question, verbose_name='pregunta_cotiacion')
+    answer = models.CharField(blank=True, max_length=200)
+    image = models.ImageField('imagen', upload_to='answer')
+    description = models.CharField('Descripcion',blank=True, max_length=300)
+    amount = models.DecimalField('Monto',max_digits=10, decimal_places=2, default=0)
+    estilo = models.CharField(blank=True, max_length=100)
+    order = models.IntegerField('orden', default=0)
 
     class Meta:
         verbose_name = 'Respuesta'
@@ -81,10 +80,4 @@ class Answer(TimeStampedModel):
 
 
     def __str__(self):
-        return self.question
-
-
-
-
-
-
+        return str(self.answer)

@@ -19,17 +19,13 @@
 {% endblock css %}
 
 {% block js %}
+  <script src="{% static 'js/axios.min.js' %}"></script>
+  <script src="{% static 'js/vue.min.js' %}"></script>
   <script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/foundation.min.js' %}"></script>
   <script src="{% static 'js/app.js' %}"></script>
 
-  <!-- Global Site Tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92060033-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments)};
-    gtag('js', new Date());
-
-    gtag('config', 'UA-92060033-1');
-  </script>
+  <!-- ==========seccion codigo vuejs========== -->
+  <script src="{% static 'apps/cotizacion/cotizacion.js' %}"></script>
+  <!-- ==========Fin seccion codigo vuejs========== -->
 {% endblock js %}

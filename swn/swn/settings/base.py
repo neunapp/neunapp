@@ -37,6 +37,7 @@ THIRD_PARTY_APPS = (
     'ckeditor',
     'sorl.thumbnail',
     'ckeditor_uploader',
+    'rest_framework',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS

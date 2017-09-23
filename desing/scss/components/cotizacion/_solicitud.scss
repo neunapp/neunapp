@@ -1,0 +1,33 @@
+.cotizacion-solicitud {
+  color: color(tercero);
+  border: solid 1px;
+  border-color: #E0E0E0;
+  padding: 1.5em;
+  margin: 1em;
+  &__title{
+    color: #9E9E9E;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-family: $font-title;
+  }
+  &__btn{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: none;
+    color: color(blanco);
+    background: color(primero);
+    padding: {
+      top: 0.6em;
+      bottom: 0.6em;
+      left: 2em;
+      right: 2em;
+    };
+    border-radius: 20px;
+    &:hover{
+      background: color(sexto);
+      cursor: pointer;
+    }
+  }
+}

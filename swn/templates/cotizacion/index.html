@@ -48,63 +48,57 @@
   </div>
   <!-- banner de cotizacion-->
 
+<app>
   <div class="grid-container">
     <!-- cotizacion-header -->
     <div class="grid-x align-center cotizacion-header">
       <h1 class="cotizacion-header__title">¿Cuanto cuesta mi proyecto?</h1>
       <div class="cell cotizacion-header__amount">
         <p class="cotizacion-header__amount__title">Monto Aproximado:</p>
-        <p class="cotizacion-header__amount__total"> S/. 20000</p>
+        <p class="cotizacion-header__amount__total"> S/. {$ monto_cotizacion $}</p>
       </div>
     </div>
     <!-- fin cotizacion-header -->
 
-    <div class="grid-x align-center cotizacion-questions">
-      <h2 class="cotizacion-questions__title">¿Para que tipo de empresa quiere el proyecto?</h2>
-      <p class="cell cotizacion-questions__subtitle">Dependiendo del rubro o la necesidad de su empresa seleccione la opcion que mas se asemeje</p>
-      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
-        <img class="questions__answer__img" src="{% static 'img/c1.jpg' %}" alt="">
-        <div class="questions__answer__content first-answer">
-          <p class="questions__answer__content__title">Pagina web para marketing</p>
+    <div v-if="!culminado" class="grid-x align-center cotizacion-questions">
+      <h2 v-if="question" class="cotizacion-questions__title">{$ question.question $}</h2>
+      <p v-if="question" class="cell cotizacion-questions__subtitle">{$ question.description $}</p>
+      <div v-for="(answer, index) in answers" class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
+        <img class="questions__answer__img" v-bind:src="answer.image" v-bind:alt="answer.name">
+        <div v-bind:class="answer.estilo">
+          <p class="questions__answer__content__title">{$ answer.answer $}</p>
           <p class="questions__answer__content__description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+            {$ answer.description $}
           </p>
-          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 900</a>
-        </div>
-      </div>
-      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
-        <img class="questions__answer__img" src="{% static 'img/c2.png' %}" alt="">
-        <div class="questions__answer__content second-answer">
-          <p class="questions__answer__content__title">Pagina web para marketing</p>
-          <p class="questions__answer__content__description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-          </p>
-          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 900</a>
-        </div>
-      </div>
-      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
-        <img class="questions__answer__img" src="{% static 'img/c3.png' %}" alt="">
-        <div class="questions__answer__content third-answer">
-          <p class="questions__answer__content__title">Pagina web para marketing</p>
-          <p class="questions__answer__content__description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-          </p>
-          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 12900</a>
-        </div>
-      </div>
-      <div class="cell small-12 medium-6 large-5 cotizacion-questions__answer">
-        <img class="questions__answer__img" src="{% static 'img/c4.jpg' %}" alt="">
-        <div class="questions__answer__content forth-answer">
-          <p class="questions__answer__content__title">Pagina web para marketing</p>
-          <p class="questions__answer__content__description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-          </p>
-          <a href="#" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> S/. 900</a>
+          <a v-if="answer.amount >= 0" v-on:click="nueva_pregunta(answer)" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i>{$ answer.amount $}</a>
+          <a v-else v-on:click="nueva_pregunta(answer)" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> Comenzar</a>
         </div>
       </div>
     </div>
+    <!-- solicitar cita -->
+    <div v-else class="grid-x align-center">
+      <div class="cell samll-12 large-6">
+        <div class="grid-x grid-margin-x align-center cotizacion-solicitud">
+          <h2 class="cotizacion-solicitud__title">Si está interesado en negociar un proyecto similar, envíanos una solicitud y te atenderemos.</h2>
+          <div class="cell small-12 large-6">
+            <input v-model="email" type="email" placeholder="Correo Electronico" />
+          </div>
+          <div class="cell small-12 large-6">
+            <input v-model="phone" type="text" placeholder="Telefonos/Celular" />
+          </div>
+          <div class="cell small-12">
+            <textarea v-model="message" name="mensjae" rows="3" placeholder="Descripcion de su empresa"></textarea>
+          </div>
+          <div class="cell shrink">
+            <button v-on:click="enviar_solicitud()" type="button" class="cotizacion-solicitud__btn" name="button">Reservar Cita</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fin solicitar cita -->
   </div>
   <!-- fin de cotizacion-->
+</app>
 
   {% include "include/footer.html" %}
 

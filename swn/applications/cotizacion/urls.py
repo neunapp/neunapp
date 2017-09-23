@@ -8,4 +8,8 @@ urlpatterns = [
         name='cotizacion-index'
     ),
 
+
+
+    ####urls para servicos
+    url(r'^', include('applications.cotizacion.url_services', namespace="cotizacion_url_services")),
 ]
