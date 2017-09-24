@@ -8,10 +8,22 @@ from django.shortcuts import get_object_or_404
 from .serializers import (
     QuestionSerializer,
     AnswerSerializer,
-    RequestQuoteSerializer
+    RequestQuoteSerializer,
+    TypeQuoteSerializer
 )
 
-from .models import Question, Answer, RequestQuote
+from .models import Question, Answer, RequestQuote, TypeQuote
+
+
+class TypeQuoteListViewSet(viewsets.ModelViewSet):
+    '''
+    servicio para listar tipo de cotizacion
+    '''
+    serializer_class = TypeQuoteSerializer
+
+    def get_queryset(self):
+        queryset = TypeQuote.objects.order_by('order')
+        return queryset
 
 
 class QuestionListViewSet(viewsets.ModelViewSet):
@@ -21,7 +33,10 @@ class QuestionListViewSet(viewsets.ModelViewSet):
     serializer_class = QuestionSerializer
 
     def get_queryset(self):
-        queryset = Question.objects.order_by('order')
+        pk_tipo = self.kwargs['pk']
+        queryset = Question.objects.filter(
+            typequote__pk=pk_tipo,
+        ).order_by('order')
         return queryset
 
 

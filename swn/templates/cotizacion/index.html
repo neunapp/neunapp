@@ -71,7 +71,7 @@
             {$ answer.description $}
           </p>
           <a v-if="answer.amount >= 0" v-on:click="nueva_pregunta(answer)" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i>{$ answer.amount $}</a>
-          <a v-else v-on:click="nueva_pregunta(answer)" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> Comenzar</a>
+          <a v-else v-on:click="cargar_preguntas(answer.id)" class="questions__answer__content__link"><i class="fa fa-plus answer-icon" aria-hidden="true"></i> Comenzar</a>
         </div>
       </div>
     </div>

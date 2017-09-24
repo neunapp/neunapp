@@ -6,7 +6,11 @@ from . import viewsets
 
 
 urlpatterns = [
-    url(r'^api/cotizacion/questions/$',
+    url(r'^api/cotizacion/tipo/$',
+        viewsets.TypeQuoteListViewSet.as_view({'get': 'list'}),
+        name='api_cotizacion-list_tipo'
+    ),
+    url(r'^api/cotizacion/questions/(?P<pk>[-\w]+)/$',
         viewsets.QuestionListViewSet.as_view({'get': 'list'}),
         name='api_cotizacion-list_questions'
     ),

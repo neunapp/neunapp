@@ -1,6 +1,14 @@
 from rest_framework import serializers
 
-from .models import Answer, Question, RequestQuote
+from .models import Answer, Question, RequestQuote, TypeQuote
+
+
+class TypeQuoteSerializer(serializers.ModelSerializer):
+    """serializador para listar tipo de cotizcion"""
+
+    class Meta:
+        model = TypeQuote
+        fields = '__all__'
 
 
 class QuestionSerializer(serializers.ModelSerializer):

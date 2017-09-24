@@ -5,22 +5,43 @@ new Vue({
   //funcion de cilco de vida
   mounted() {
     var self = this;
-    axios.get('/api/cotizacion/questions/')
+    //cargamos lo tipode de cotizacion
+    axios.get('/api/cotizacion/tipo/')
       .then(function (response) {
-        self.questions = response.data;
-        self.question = response.data[self.indice];
-        self.cargar_respuesta(self.question['id']);
+        self.answers = response.data;
       })
       .catch(function (error) {
         console.log(error);
       });
+
+    self.question = {
+      'question':'¿Para qué tipo de proyecto busca una cotización?',
+      'description' : 'Seleccione la opción que más se asemeja a tu empresa o idea.'
+    }
+
   },
   methods: {
-    cargar_respuesta: function(pk) {
+    cargar_preguntas: function(pk) {
       var self = this;
+      axios.get('/api/cotizacion/questions/'+pk+'/')
+        .then(function (response) {
+          self.questions = response.data;
+          console.log(self.questions);
+          self.question = response.data[self.indice];
+          console.log(self.question);
+          self.cargar_respuesta(self.question['id']);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
+    cargar_respuesta: function(pk){
+      var self = this;
+      console.log(pk);
       axios.get('/api/cotizacion/questions/answer/'+pk+'/')
         .then(function (response) {
           self.answers = response.data;
+          console.log(self.answers);
         })
         .catch(function (error) {
           console.log(error);
