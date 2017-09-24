@@ -107,4 +107,4 @@ class Answer(TimeStampedModel):
 
 
     def __str__(self):
-        return str(self.answer)
+        return str(self.id)
