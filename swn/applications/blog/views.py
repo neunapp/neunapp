@@ -21,7 +21,7 @@ from django.views.generic.edit import FormMixin
 from applications.home.forms import BlogSuscriptionForm
 
 #app blog
-from .models import Blog, Category, Commentary
+from .models import Blog, Category, Commentary, MasterCategory
 #local forms
 from .forms import SearchForm,ComentarybyBlogForm
 
@@ -36,12 +36,35 @@ class BlogView(ListView):
     def get_context_data(self, **kwargs):
         context = super(BlogView, self).get_context_data(**kwargs)
         context['form'] = SearchForm
+        context['master_categorys'] = MasterCategory.objects.order_by('created')
         return context
 
     def get_queryset(self):
         #recuperamos el valor por GET
         q = self.request.GET.get("kword", '')
         queryset = Blog.objects.search_blog(q)
+        return queryset
+
+
+#vistas para blog
+class FilterBlogView(ListView):
+    """ pantalla principal con filtro de blog"""
+
+    context_object_name = 'blogs'
+    template_name = 'blog/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(FilterBlogView, self).get_context_data(**kwargs)
+        context['form'] = SearchForm
+        context['master_categorys'] = MasterCategory.objects.order_by('created')
+        return context
+
+    def get_queryset(self):
+        #recuperamos valor de url
+        master_category = self.kwargs['slug']
+        #recuperamos el valor por GET
+        q = self.request.GET.get("kword", '')
+        queryset = Blog.objects.filter_blog_by_master_category(master_category,q)
         return queryset
 
 

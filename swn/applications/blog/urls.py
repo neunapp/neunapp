@@ -3,9 +3,14 @@ from . import views
 
 urlpatterns = [
     #url para pagina principal de blog
-    url(r'^articulos-relacionados-empresas-tecnologia/$',
+    url(r'^articulos-en-empresas-y-desarrollo-de-sistemas-web-cusco/blog$',
         views.BlogView.as_view(),
         name='blog-index'
+    ),
+    #url para filtrar por categoria principal
+    url(r'^sistemas-web-cusco/(?P<slug>[-\w]+)/$',
+        views.FilterBlogView.as_view(),
+        name='blog-filter'
     ),
     #url para ver el detalede un blog
     url(r'^blog-leer/(?P<slug>[-\w]+)/$',

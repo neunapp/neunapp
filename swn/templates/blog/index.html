@@ -28,6 +28,11 @@
           <input type="submit" class="blog-form__btn" name="buscar" value="Buscar">
         </form>
       </div>
+      <div class="cell small-12 blog-header">
+        {% for mc in master_categorys %}
+          <a class="blog-header__item"href="{% url 'blog_app:blog-filter' mc.slug %}">{{mc.show_name}}</a>
+        {% endfor %}
+      </div>
       {% for blog in blogs  %}
         <div class="cell small-12 medium-6 large-4 blog-item">
           <img src="{{blog.image.url}}" alt="{{blog.title}}" class="blog-item__img">

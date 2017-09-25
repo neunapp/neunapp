@@ -32,6 +32,7 @@
 .title-bar{
   position: fixed;
   width: 100%;
+  z-index: 300;
 }
 
 .menu__item{
@@ -60,4 +61,7 @@
 
 .header_space{
   height: 5em;
+  @include hasta(640px){
+    height: 2.5em;
+  };
 }

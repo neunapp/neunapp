@@ -35,10 +35,39 @@ class Tag(TimeStampedModel):
 
 
 @python_2_unicode_compatible
+class MasterCategory(TimeStampedModel):
+    """django data model categoria principal"""
+
+    show_name = models.CharField('nombre', max_length=30, blank=True)
+    name = models.CharField('nombre', max_length=100)
+    slug = models.SlugField(editable=False, max_length=200)
+
+    class Meta:
+        verbose_name = 'Categoria principal'
+        verbose_name_plural = 'Categorias principales'
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        str = self.name
+        slug_unique = str.replace(" ", "-")
+        self.slug = slugify(slug_unique)
+        super(MasterCategory, self).save(*args, **kwargs)
+
+
+@python_2_unicode_compatible
 class Category(TimeStampedModel):
     """django data model categoria"""
 
     name = models.CharField('nombre', max_length=30)
+    master_category = models.ForeignKey(
+        MasterCategory,
+        verbose_name='categoria_master',
+        blank=True,
+        null=True,
+    )
     slug = models.SlugField(editable=False, max_length=200)
     objects = CategoryManager()
 

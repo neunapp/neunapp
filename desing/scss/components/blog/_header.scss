@@ -1,0 +1,27 @@
+.blog-header {
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  &__item{
+    border: 1px solid;
+    border-color: color(primero);
+    border-radius: 20px;
+    width: 150px;
+    text-align: center;
+    margin: 0.5em;
+    padding: {
+      top: 0.4em;
+      bottom: 0.4em;
+      left: 1em;
+      right: 1em;
+    }
+    &:hover{
+      background: color(sexto);
+      color: color(blanco);
+    }
+    @include hasta(640px){
+      font-size: 0.7em;
+      width: 90px;
+    };
+  }
+}
