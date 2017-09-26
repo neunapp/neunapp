@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 from django import forms
 
 from .models import Citation, ProductSolicitude
@@ -22,12 +22,12 @@ class CitationForm(forms.ModelForm):
         widgets = {
             'email': forms.TextInput(
                 attrs={
-                    'placeholder': 'Correo electronico',
+                    'placeholder': 'Correo Electrónico',
                 }
             ),
             'phone': forms.TextInput(
                 attrs={
-                    'placeholder': 'Telefonos',
+                    'placeholder': 'Teléfonos',
                 }
             ),
             'address': forms.TextInput(
@@ -42,17 +42,17 @@ class CitationForm(forms.ModelForm):
             ),
             'hour_atention': forms.TextInput(
                 attrs={
-                    'placeholder': 'En que horarios podemos llamarlo',
+                    'placeholder': '¿En qué horarios podemos llamarlo?',
                 }
             ),
             'day_atention': forms.TextInput(
                 attrs={
-                    'placeholder': 'Que dias podemos llamarlo',
+                    'placeholder': '¿Que días podemos llamarlo?',
                 }
             ),
             'messagge': forms.Textarea(
                 attrs={
-                    'placeholder': 'Dejenos un mensaje...',
+                    'placeholder': 'Déjenos un mensaje...',
                     'rows':'4',
                 }
             ),
@@ -73,12 +73,12 @@ class ProductSolicitudeForm(forms.ModelForm):
         widgets = {
             'email': forms.TextInput(
                 attrs={
-                    'placeholder': 'Correo electronico',
+                    'placeholder': 'Correo Electrónico',
                 }
             ),
             'phone': forms.TextInput(
                 attrs={
-                    'placeholder': 'Telefono o Celular',
+                    'placeholder': 'Teléfono o Celular',
                 }
             ),
         }

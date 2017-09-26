@@ -16,7 +16,7 @@ new Vue({
 
     self.question = {
       'question':'¿Para qué tipo de proyecto busca una cotización?',
-      'description' : 'Seleccione la opción que más se asemeja a tu empresa o idea.'
+      'description' : 'Seleccione la opción que más se asemeje a tu empresa o idea.'
     }
 
   },

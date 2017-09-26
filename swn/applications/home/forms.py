@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django import forms
 
 from .models import Suscription
@@ -17,7 +18,7 @@ class SuscriptionForm(forms.ModelForm):
             'email': forms.TextInput(
                 attrs={
                     'class':'suscription__form__input',
-                    'placeholder': 'Correo Electronico',
+                    'placeholder': 'Correo Electrónico',
                 }
             ),
         }
@@ -37,7 +38,7 @@ class BlogSuscriptionForm(forms.ModelForm):
             'email': forms.TextInput(
                 attrs={
                     'class':'blog-detail__suscription__input',
-                    'placeholder': 'Correo Electronico',
+                    'placeholder': 'Correo Electrónico',
                 }
             ),
         }

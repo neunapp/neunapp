@@ -10,7 +10,7 @@
   Sistemas web Cusco | Diseño de paginas web en cusco
 {% endblock %}
 
-{% block description %} Somos un sito web que se dedica al desarrollo de sistemas web y paginas web en cusco. navega y encuentra sistemas web de ventas en cusco, sistemas de inventario en cusco y diseños bontios de paginas web en cusco.  {% endblock %}
+{% block description %} Somos un sitio web que se dedica al desarrollo de sistemas web y paginas web en cusco. navega y encuentra sistemas web de ventas en cusco, sistemas de inventario en cusco y diseños bontios de paginas web en cusco.  {% endblock %}
 {% block tags %} Paginas web cusco, sistemas cusco peru, paginas web economicas en cusco, desarrollo de paginas web en cusco, sistemas web en cusco peru {% endblock tags %}
 {% block content %}
   {% include "include/header.html" %}
@@ -30,7 +30,7 @@
     </div>
     <div class="banner__copy">
         <h1 class="banner__copy__title">Desarrollo de sistemas web.</h1>
-        <p class="banner__copy__text">Hagamos que el internet sea mucho más que una pagina web.</p>
+        <p class="banner__copy__text">Hagamos que el internet sea mucho más que una página web.</p>
         <div class="banner__copy__controls">
           <a href="{% url 'productos_app:productos_cita-index' %}" class="banner__copy__controls__btn principal">
             <i class="fa fa-handshake-o" aria-hidden="true"></i>
@@ -56,12 +56,12 @@
     <div class="cell small-12 medium-4 large-3 services__item">
       <i class="fa fa-diamond fa-5x services__icon" aria-hidden="true"></i>
       <p class="services__item__title">Diseño agradable</p>
-      <p class="services__item__description">Sus herramientas de trabajo son tambien parte de su empresa. hagamos que se vean bien.</p>
+      <p class="services__item__description">Sus herramientas de trabajo son tambien parte de su empresa. Hagamos que se vea bien.</p>
     </div>
     <div class="cell small-12 medium-4 large-3 services__item">
       <i class="fa fa-check fa-5x services__icon" aria-hidden="true"></i>
-      <p class="services__item__title">Carga Rapida</p>
-      <p class="services__item__description">Que la estadia de sus clientes en su plataforma web, sea agradable, y no molesta por cargas lentas.</p>
+      <p class="services__item__title">Carga Rápida</p>
+      <p class="services__item__description">Que la estadía de sus clientes en su plataforma web sea agradable, y no molesta por cargas lentas.</p>
     </div>
   </div>
   <!-- fin de servicios -->
@@ -80,7 +80,7 @@
         </a>
         <a class="prods__content__btns__item principal" href="{% url 'productos_app:productos_cita-add' producto_1.slug producto_1.pk %}">
           <i class="fa fa-pencil-square fa-1x prods__icon" aria-hidden="true"></i>
-          Pactar Cita
+          Reservar Cita
         </a>
       </div>
     </div>
@@ -102,7 +102,7 @@
         </a>
         <a class="prods__content__btns__item principal" href="{% url 'productos_app:productos_cita-add' producto_2.slug producto_2.pk %}">
           <i class="fa fa-pencil-square fa-1x prods__icon" aria-hidden="true"></i>
-          Pactar Cita
+          Reservar Cita
         </a>
       </div>
     </div>
@@ -124,7 +124,7 @@
         </a>
         <a class="prods__content__btns__item principal" href="{% url 'productos_app:productos_cita-add' producto_3.slug producto_3.pk %}">
           <i class="fa fa-pencil-square fa-1x prods__icon" aria-hidden="true"></i>
-          Pactar Cita
+          Reservar Cita
         </a>
       </div>
     </div>
@@ -146,7 +146,7 @@
         </a>
         <a class="prods__content__btns__item principal" href="{% url 'productos_app:productos_cita-add' producto_4.slug producto_4.pk %}">
           <i class="fa fa-pencil-square fa-1x prods__icon" aria-hidden="true"></i>
-          Pactar Cita
+          Reservar Cita
         </a>
       </div>
     </div>
@@ -158,7 +158,7 @@
 
   <!-- suscripcion -->
   <div class="suscription">
-    <p class="suscription__title">Suscribete y recibe noticias sobre software y actualidad</p>
+    <p class="suscription__title">Suscríbete y recibe noticias sobre software y actualidad</p>
     <form class="suscription__form" method="post">{% csrf_token %}
       {{form.email}}
       <input type="submit" class="suscription__form__btn" value="Suscribirme">
