@@ -22,12 +22,12 @@ class CitationForm(forms.ModelForm):
         widgets = {
             'email': forms.TextInput(
                 attrs={
-                    'placeholder': 'Correo Electrónico',
+                    'placeholder': 'E-mail',
                 }
             ),
             'phone': forms.TextInput(
                 attrs={
-                    'placeholder': 'Teléfonos',
+                    'placeholder': 'Celular/Telefono',
                 }
             ),
             'address': forms.TextInput(
